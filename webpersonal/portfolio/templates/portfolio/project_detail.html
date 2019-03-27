@@ -13,7 +13,6 @@
 
 {% block content %}
 {% include 'portfolio/includes/projects_menu.html'%}
-    {% for project in project_list%}
         <!-- Proyecto -->
         <div class="row project">  	
             <div class="col-lg-3 col-md-4 offset-lg-1">
@@ -21,9 +20,10 @@
             </div>
             <div class="col-lg-7 col-md-8">
                 <h2 class="section-heading title">{{project.title}}</h2>   
-                <p>{{project.description|safe|truncatechars:"200"}}</p>
-                <p><a href=" {{project.pk}} ">Leer más</a>
+                <p>{{project.description|safe}}</p>
+                {% if request.user.is_staff %}
+                    <p><a href='' post.id >Editar</a></p>
+                {% endif %}
             </div>
         </div>
-    {% endfor %}
 {% endblock %}
