@@ -23,6 +23,9 @@
                 <h2 class="section-heading title">{{project.title}}</h2>   
                 <p>{{project.description|safe|truncatechars:"200"}}</p>
                 <p><a href=" {{project.pk}} ">Leer más</a>
+                    | <a href="{% url 'projects:update' project.id %}">Editar</a>
+                    | <a href="{% url 'projects:delete' project.id %}">Borrar</a>
+                </p>
             </div>
         </div>
     {% endfor %}

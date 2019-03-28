@@ -1,29 +1,26 @@
 {% extends 'core/base.html' %}
-
 {% block title %}Portfolio{% endblock %}
-
 {% load static %}
 {% block background %}{% static 'core/img/portfolio-bg.jpg' %}{% endblock %}
-
-
 {% block headers %} 
-<h1>Portfolio</h1>
-<span class="subheading">Estos son algunos de mis trabajos</span>
+    <h1>Portfolio</h1>
+    <span class="subheading">Estos son algunos de mis trabajos</span>
 {% endblock %} 
-
 {% block content %}
 {% include 'portfolio/includes/projects_menu.html'%}
-        <!-- Proyecto -->
-        <div class="row project">  	
-            <div class="col-lg-3 col-md-4 offset-lg-1">
-                <img class="img-fluid" src="{{project.image.url}}" alt="">
-            </div>
-            <div class="col-lg-7 col-md-8">
-                <h2 class="section-heading title">{{project.title}}</h2>   
-                <p>{{project.description|safe}}</p>
-                {% if request.user.is_staff %}
-                    <p><a href='' post.id >Editar</a></p>
-                {% endif %}
-            </div>
+    <!-- Proyecto -->
+    <div class="row project">  	
+        <div class="col-lg-3 col-md-4 offset-lg-1">
+            <img class="img-fluid" src="{{project.image.url}}" alt="">
         </div>
+        <div class="col-lg-7 col-md-8">
+            <h2 class="section-heading title">{{project.title}}</h2>   
+            <p>{{project.description|safe}}</p>
+            {% if request.user.is_staff %}
+                <p><a href="{% url 'projects:update' project.id %}" post.id >Editar</a>
+                    | <a href="{% url 'projects:delete' project.id %}" post.id >Borrar</a>
+                </p>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}
