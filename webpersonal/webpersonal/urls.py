@@ -22,6 +22,7 @@ from portfolio.urls import projects_patterns
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
+    path('contacto/', include('contact.urls')),
     path('portafolio/', include(projects_patterns)),
 ]
 

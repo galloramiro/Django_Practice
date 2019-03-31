@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'contact',
     'ckeditor',
     'portfolio.apps.PortfolioConfig'
 ]
@@ -138,3 +139,17 @@ CKEDITOR_CONFIGS = {
         ]
     }
 }
+
+
+# Email Setings
+
+if DEBUG:
+    EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
+    EMAIL_FILE_PATH = os.path.join(BASE_DIR, 'sent_emails')
+else:
+    EMAIL_USE_TLS = True
+    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_HOST_USER = 'asddsa@gmail.com'
+    EMAIL_HOST_PASSWORD = 'asddsa'
+    EMAIL_PORT = 587
+    ACCOUNT_EMAIL_VERIFICATION = "none"

@@ -10,5 +10,10 @@
 (ok) CRUD Update Views in About model
 (ok) Minix identification for CRUD views
 
-(  ) Create Contact App
-(  )
+(ok) Create Contact App
+(ok) Register App in Settings
+(ok) Create urls.py and migrate urls, views and template
+(ok) Configure URL Global
+(ok) Create the forms.py
+(ok) Set the widgets in forms.py
+(ok) Create send_email and configure de settings email
