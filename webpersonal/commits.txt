@@ -1,0 +1,14 @@
+(ok) Ckeditor
+(ok) Detail View
+(ok) CRUD Views Create (With error in the image upload)
+(ok) CRUD Views Edit
+(ok) CRUD Views Delete
+(ok) CkEditor on CRUD view
+(ok) Minix identification for CRUD views
+
+(ok) Model About
+(ok) CRUD Update Views in About model
+(ok) Minix identification for CRUD views
+
+(  ) Create Contact App
+(  )

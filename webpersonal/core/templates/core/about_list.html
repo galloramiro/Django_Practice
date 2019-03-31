@@ -12,17 +12,21 @@
 
 {% block content %}
     <!-- Contenido Principal -->
+    {% for about in about_list %}
     <div class="container">
       <div class="row">   
         <div class="col-lg-3 col-md-4 offset-lg-1">
-          <img class="img-fluid avatar" src="{% static 'core/img/avatar.jpg' %}" alt="">
+          <img class="img-fluid avatar" src="{{about.image.url}}" alt="">
         </div>
         <div class="col-lg-7 col-md-8">
-          <h2 class="section-heading">Ramiro Gallo</h2>   
-          <p>Nacido en... lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit, fuga atque ea nobis sit soluta odio.</p>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe nostrum ullam eveniet pariatur voluptates odit...</p>
+          <h2 class="section-heading">{{about.title}}</h2>   
+          <p>{{about.description|safe}}</p>
+          <p>
+            <a href="{% url 'update' about.id %}">Editar</a>
+          </p>
         </div>
       </div>  
     </div>
+    {% endfor %}
     {% endblock %}
 
