@@ -17,5 +17,7 @@ Health Insurance Quotes Project
 (ok) Configure the htmls
 (ok) Configure the models.py
 (ok) Configure admin.py
-(  ) Create the Quote function
+(ok) Achive obtain the data of the form.
+(ok) Configure the form properly
+(  ) Start with the logic of the Quotes
 
