@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Cotizador{% endblock %}
+
+{% load static %}
+
+
+{% block headers %} 
+    <h1>Cotizador</h1>
+    <span class="subheading">Cotiza tu plan!</span>
+{% endblock %} 
+
+{% block content %}
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Send message">
+    </form>
+{% endblock %}

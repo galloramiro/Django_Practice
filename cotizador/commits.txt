@@ -1,0 +1,21 @@
+Health Insurance Quotes Project
+(ok) Crete proyect
+(ok) Configure the language and media files
+
+(ok) Crete core app
+(ok) Crete
+     - Superuser 
+     - ulrs.py
+     - templates folder
+     - statics folder
+     - forms.py
+     - base.html
+     - home.html
+(ok) Configure the Global urls.py
+(ok) Configure the forms.py
+(ok) Create the FormView
+(ok) Configure the htmls
+(ok) Configure the models.py
+(ok) Configure admin.py
+(  ) Create the Quote function
+
