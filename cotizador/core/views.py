@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.views.generic.edit import FormView
-from django.views.generic.base import TemplateView
+from django.views.generic.list import ListView
 
 from .forms import QuoteForm
 from .models import SmgQuotesTable
@@ -12,25 +12,22 @@ class QuoteFormView(FormView):
     form_class = QuoteForm
     success_url = 'quotes'
 
-    
-    def form_valid(self, form):
-        name = form.cleaned_data['name']
-        email = form.cleaned_data['email']
-        couple = form.cleaned_data['couple']
-        age = form.cleaned_data['age']
-        kids = form.cleaned_data['kids']
-        #query_filter = Quotes().planSelector(couple, kids, age)
-        #obj = SmgQuotesTable.objects.filter(composite='Ind. Junior (H25)')
-        return super(QuoteFormView, self).form_valid(form)
 
 
-class QuoteView(TemplateView, QuoteFormView):
-    template_name = "core/quotes.html"
+class QuoteListView(ListView):
+    model = SmgQuotesTable
 
-    
     def get_queryset(self):
-        queryset = super(CLASS_NAME, self).get_queryset()
-        queryset = queryset # TODO
+        r_get = self.request.GET
+        d_get = {'name': None , 'email':None , 'couple': None, 'age': None, 'kids':None ,}
+        
+        for value in d_get:
+            d_get[value] = r_get[value]
+
+        query_filter = Quotes().planSelector(d_get['couple'], d_get['kids'], d_get['age'])
+
+
+        queryset = super(QuoteListView, self).get_queryset().filter(composite=query_filter)
         return queryset
 
 

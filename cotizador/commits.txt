@@ -20,5 +20,8 @@ Health Insurance Quotes Project
 (ok) Achive obtain the data of the form.
 (ok) Configure the form properly
 (ok) Start with the logic of the Quotes
-(  ) Learn how to send the data of the form to other view
+(ok) Learn how to send the data of the form to other view
+(ok) Learn how to filter the data and retrive in the template
+(ok) Lay out the template for the quotes
+(  ) Start with the complex part of the quotes
 

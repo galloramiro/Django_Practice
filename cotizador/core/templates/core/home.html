@@ -12,7 +12,7 @@
 
 {% block content %}
 <style>label{display:none}</style>
-    <form method="post" action="{ url 'quote' }">{% csrf_token %}
+    <form method="get" action="{% url 'quotes-list' %}">{% csrf_token %}
         {{ form.as_p }}
         <input type="submit" class="btn btn-primary btn-block py-2" value="Cotizar">
     </form>

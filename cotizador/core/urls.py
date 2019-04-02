@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import QuoteFormView, QuoteView
+from .views import QuoteFormView, QuoteListView
 
 urlpatterns = [
     path('', QuoteFormView.as_view(), name='home'),
-    path('quotes/', QuoteView.as_view(), name='quotes'),
+    path('quotes/', QuoteListView.as_view(), name='quotes-list'),
 ]
