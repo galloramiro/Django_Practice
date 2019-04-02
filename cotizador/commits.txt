@@ -19,5 +19,6 @@ Health Insurance Quotes Project
 (ok) Configure admin.py
 (ok) Achive obtain the data of the form.
 (ok) Configure the form properly
-(  ) Start with the logic of the Quotes
+(ok) Start with the logic of the Quotes
+(  ) Learn how to send the data of the form to other view
 

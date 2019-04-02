@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import QuoteView
+from .views import QuoteFormView, QuoteView
 
 urlpatterns = [
-    path('', QuoteView.as_view(), name='home'),
+    path('', QuoteFormView.as_view(), name='home'),
+    path('quotes/', QuoteView.as_view(), name='quotes'),
 ]

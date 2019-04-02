@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Cotización{% endblock %}
+
+{% load static %}
+
+
+{% block headers %} 
+    <h1>Cotización</h1>
+    <span class="subheading">Cotización</span>
+{% endblock %} 
+
+{% block content %}
+<style>label{display:none}</style>
+    {% for r in request.POST %}
+    r
+    {% endfor %}
+{% endblock %}
