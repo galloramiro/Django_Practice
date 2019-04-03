@@ -18,16 +18,11 @@ class QuoteListView(ListView):
     model = SmgQuotesTable
 
     def get_queryset(self):
-        r_get = self.request.GET
-        d_get = {'name': None , 'email':None , 'couple': None, 'age': None, 'kids':None ,}
-        
-        for value in d_get:
-            d_get[value] = r_get[value]
+        r_get = self.request.GET   # Get the data sendir by QuoteFormView
+        query_filter = Quotes().planSelector(r_get['couple'], r_get['kids'], r_get['age']) # Use the filter to get the correct Quote
+        queryset = super(QuoteListView, self).get_queryset().filter(composite=query_filter) # Aply the filter to get the correct queryset
+        Quotes().salaryDiscount(queryset,r_get['salary'])  # Aply the discount of the salary
 
-        query_filter = Quotes().planSelector(d_get['couple'], d_get['kids'], d_get['age'])
-
-
-        queryset = super(QuoteListView, self).get_queryset().filter(composite=query_filter)
         return queryset
-
+    
 

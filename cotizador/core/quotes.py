@@ -4,6 +4,7 @@ class Quotes():
     def __init__(self, *args, **kwargs):
         super(Quotes, self).__init__(*args, **kwargs)
     
+
     def ageSelector(self, age):
         if age == 'jr':
             return 'Junior (H25)'
@@ -27,7 +28,11 @@ class Quotes():
             aditional = str(kids - 3)
             return '3 Hijos + {} Adicionales'.format(aditional)
     
+
     def planSelector(self, couple, kids, age,):
+        '''
+        This function take the couple, kids and age values sendint by de form to retrive the correct health insurance quotes.
+        '''
         age_f = self.ageSelector(age)
         kids_f = self.kidsSelector(kids)
 
@@ -43,13 +48,21 @@ class Quotes():
             return 'Mat. ' + age_f + kids_f
 
 
-# ('-25', '-25'), ('26-35', '26-35'), ('35+', '35+')
-# (0, 0), (1, 1), (2, 2), (3, 3), (4, 4), (5, 5), (6, 6), (7, 7), (8, 8)
+    def salaryDiscount(self, queryset, salary):
+        '''
+        This function apply the salary discount to all the values for this person. 
+        '''
+        salary = float(salary) * 0.03  # Take the salary, and aply the part that could be discounted
 
-# Ind. Junior
-# Ind. Juvenil
-# Individual
+        for i in queryset:  # Get the object of the queryset
+            i.smg01 = round(i.smg01  - salary, 2)    # Use the object edit the values on the fly
+            i.smg02 = round(i.smg02  - salary, 2)
+            i.smg10 = round(i.smg10  - salary, 2)
+            i.smg20 = round(i.smg20  - salary, 2)
+            i.smg30 = round(i.smg30  - salary, 2)
+            i.smg40 = round(i.smg40  - salary, 2)
+            i.smg50 = round(i.smg50  - salary, 2)
+            i.smg60 = round(i.smg60  - salary, 2)
+            i.smg70 = round(i.smg70  - salary, 2)
 
-# Mat. Junior
-# Mat. Juvenil
-# Mat. Individual
+        return queryset   # Return the queryset edited. 

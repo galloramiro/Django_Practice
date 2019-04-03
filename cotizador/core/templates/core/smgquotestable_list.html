@@ -12,35 +12,38 @@
 
 {% block content %}
 {% for item in object_list %}
-<table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col"></th>
-        <th scope="col">SMG01</th>
-        <th scope="col">SMG02</th>
-        <th scope="col">SMG10</th>
-        <th scope="col">SMG20</th>
-        <th scope="col">SMG30</th>
-        <th scope="col">SMG40</th>
-        <th scope="col">SMG50</th>
-        <th scope="col">SMG60</th>
-        <th scope="col">SMG70</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">{{ item.composite }}</th>
-        <td>$ {{ item.smg01 }}</td>
-        <td>$ {{ item.smg02 }}</td>
-        <td>$ {{ item.smg10 }}</td>
-        <td>$ {{ item.smg20 }}</td>
-        <td>$ {{ item.smg30 }}</td>
-        <td>$ {{ item.smg40 }}</td>
-        <td>$ {{ item.smg50 }}</td>
-        <td>$ {{ item.smg60 }}</td>
-        <td>$ {{ item.smg70 }}</td>
-      </tr>
-    </tbody>
-</table>
+<div class="table-responsive text-nowrap"></div>
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">SMG01</th>
+          <th scope="col">SMG02</th>
+          <th scope="col">SMG10</th>
+          <th scope="col">SMG20</th>
+          <th scope="col">SMG30</th>
+          <th scope="col">SMG40</th>
+          <th scope="col">SMG50</th>
+          <th scope="col">SMG60</th>
+          <th scope="col">SMG70</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">{{ item.composite }}</th>
+          <td>$ {{ item.smg01 }}</td>
+          <td>$ {{ item.smg02 }}</td>
+          <td>$ {{ item.smg10 }}</td>
+          <td>$ {{ item.smg20 }}</td>
+          <td>$ {{ item.smg30 }}</td>
+          <td>$ {{ item.smg40 }}</td>
+          <td>$ {{ item.smg50 }}</td>
+          <td>$ {{ item.smg60 }}</td>
+          <td>$ {{ item.smg70 }}</td>
+        </tr>
+        
+      </tbody>
+  </table>
+</div>
 {% endfor %}
 {% endblock %}

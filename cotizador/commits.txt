@@ -23,5 +23,12 @@ Health Insurance Quotes Project
 (ok) Learn how to send the data of the form to other view
 (ok) Learn how to filter the data and retrive in the template
 (ok) Lay out the template for the quotes
-(  ) Start with the complex part of the quotes
+(  ) Other variables of the quotes:
+    + Salary Discount
+    - Additional for son
+    - Additional for son between 21 to 30 
+    - Additional for family in charge
+    - Additional for old person in charge with the ranges of age and with GCR or with out it 
+
+
 

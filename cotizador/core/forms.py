@@ -21,6 +21,9 @@ class QuoteForm(forms.Form):
     kids = forms.CharField(label='Edad', required=True, widget = forms.Select(choices=KIDS_CHOICES, 
                               attrs={'class':'form-control', 'rows': 5, 'placeholder': 'Kids'}
                             ))
+    salary = forms.FloatField(label='Edad', required=True, widget = forms.NumberInput( 
+                              attrs={'class':'form-control', 'rows': 5, 'placeholder': 'Salario'}
+                            ))
 
 
 
