@@ -46,4 +46,9 @@
   </table>
 </div>
 {% endfor %}
+<div>
+{% for advisor in advisors_list %}
+  <p>{{ advisor.name }} | {{ advisor.phone }} | {{ advisor.email }}</p>
+{% endfor %}
+</div>
 {% endblock %}

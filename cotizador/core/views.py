@@ -3,7 +3,7 @@ from django.views.generic.edit import FormView
 from django.views.generic.list import ListView
 
 from .forms import QuoteForm
-from .models import SmgQuotesTable
+from .models import SmgQuotesTable, Advisors
 from .quotes import Quotes
 
 
@@ -25,4 +25,10 @@ class QuoteListView(ListView):
 
         return queryset
     
+    def get_context_data(self, *args, **kwargs):
+        context = super(QuoteListView, self).get_context_data(*args, **kwargs)
+        context['advisors_list'] = Advisors.objects.order_by('name')
+        return context 
 
+
+# https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model

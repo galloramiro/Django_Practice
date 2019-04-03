@@ -29,6 +29,8 @@ Health Insurance Quotes Project
     - Additional for son between 21 to 30 
     - Additional for family in charge
     - Additional for old person in charge with the ranges of age and with GCR or with out it 
-
+(ok) Extend the user model with phone
+(ok) Render the User info in the template
+(  ) Create a filter in the template for the user
 
 
