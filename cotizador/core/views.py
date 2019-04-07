@@ -26,9 +26,10 @@ class QuoteListView(ListView):
         return queryset
     
     def get_context_data(self, *args, **kwargs):
+        user = self.request.user.username
         context = super(QuoteListView, self).get_context_data(*args, **kwargs)
-        context['advisors_list'] = Advisors.objects.order_by('name')
-        return context 
+        context['advisors_list'] = Advisors.objects.all().filter(user__username__icontains=user)
+        return context
 
 
 # https://docs.djangoproject.com/en/dev/topics/auth/customizing/#extending-the-existing-user-model

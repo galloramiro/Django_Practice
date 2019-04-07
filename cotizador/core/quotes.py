@@ -6,11 +6,12 @@ class Quotes():
     
 
     def ageSelector(self, age):
-        if age == 'jr':
+        age = int(age)
+        if age < 25:
             return 'Junior (H25)'
-        elif age == 'juv':
+        elif age < 35:
             return 'Juvenil (H35)'
-        elif age == 'ind':
+        elif age < 40:
             return 'Individual (+35)'
 
     def kidsSelector(self,kids):
