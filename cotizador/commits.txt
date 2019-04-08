@@ -31,14 +31,9 @@ Health Insurance Quotes Project
     + Kids age
     + Family in charge
     + Family in charge age
-(  ) Other variables of the quotes:
+(  ) Re do the quotes Class:
     + Salary Discount
     - Additional for son
     - Additional for son between 21 to 30 
     - Additional for family in charge
-    - Additional for old person in charge with the ranges of age and with GCR or with out it 
-
-
-
-
-
+    - Additional for old person in charge with the ranges of age and with GCR or with out it
